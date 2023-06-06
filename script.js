@@ -2,8 +2,8 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getRandomAddress(addressArray) {
-  return addressArray[Math.floor(Math.random() * 10)];
+function getRandomImage(imageArray) {
+  return imageArray[Math.floor(Math.random() * 10)];
 }
 
 function getRandomPhone(numberArray) {
@@ -25,6 +25,7 @@ let id = 0;
 const onClick = (e) => {
   const like = e.target;
   let likedArray = JSON.parse(localStorage.getItem("liked"));
+  const author = localStorage.getItem("currentName");
 
   if (like.classList.contains("wishlist__empty")) {
     like.classList.add("wishlist__pull");
@@ -33,9 +34,13 @@ const onClick = (e) => {
     objects.forEach((card) => {
       // console.log(card.id, like.id);
       if (card.id === Number(like.id)) {
-        if (!likedArray) localStorage.setItem("liked", JSON.stringify([card]));
+        if (!likedArray)
+          localStorage.setItem("liked", JSON.stringify([{ ...card, author }]));
         else
-          localStorage.setItem("liked", JSON.stringify([...likedArray, card]));
+          localStorage.setItem(
+            "liked",
+            JSON.stringify([...likedArray, { ...card, author }])
+          );
         // localStorage.removeItem("liked", JSON.stringify([card]));
       }
     });
@@ -63,19 +68,6 @@ const createItems = () => {
       area: getRandomNumber(20, 200),
       rooms: getRandomNumber(1, 5),
       floor: getRandomNumber(1, 30),
-      address: getRandomAddress([
-        "Купчино",
-        "Петроградская",
-        "Автово",
-        "Площадь Ленина",
-        "Старая Деревня",
-        "Звенигородская",
-        "Василеостровская",
-        "Рыбацкое",
-        "Спасская",
-        "Новочеркаская",
-      ]),
-      isLiked: false,
       "lessor's phone": getRandomPhone([
         "+7-934-387-67-29",
         "+7-867-387-67-29",
@@ -83,8 +75,7 @@ const createItems = () => {
         "+7-967-527-98-12",
         "+7-874-329-75-65",
       ]),
-
-      img: getRandomAddress([
+      img: getRandomImage([
         "img/room1.jpg",
         "img/room2.png",
         "img/room3.avif",

@@ -358,3 +358,13 @@ input::-webkit-inner-spin-button {
   text-align: center;
   max-width: 1000px;
 }
+
+@media (max-width: 1300px) {
+  .list {
+    flex-direction: column;
+    width: auto;
+  }
+  .card {
+    width: 100%;
+  }
+}
