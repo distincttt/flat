@@ -359,7 +359,7 @@ input::-webkit-inner-spin-button {
   max-width: 1000px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1550px) {
   .list {
     flex-direction: column;
     width: auto;

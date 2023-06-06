@@ -1,7 +1,6 @@
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 function getRandomImage(imageArray) {
   return imageArray[Math.floor(Math.random() * 10)];
 }
@@ -22,40 +21,47 @@ const objects = [];
 const list = document.querySelector(".list");
 const allLink = document.querySelectorAll(".header__button");
 let id = 0;
+
 const onClick = (e) => {
-  const like = e.target;
-  let likedArray = JSON.parse(localStorage.getItem("liked"));
   const author = localStorage.getItem("currentName");
+  if (!author) return;
+  else {
+    const like = e.target;
+    let likedArray = JSON.parse(localStorage.getItem("liked"));
 
-  if (like.classList.contains("wishlist__empty")) {
-    like.classList.add("wishlist__pull");
-    like.classList.remove("wishlist__empty");
+    if (like.classList.contains("wishlist__empty")) {
+      like.classList.add("wishlist__pull");
+      like.classList.remove("wishlist__empty");
 
-    objects.forEach((card) => {
-      // console.log(card.id, like.id);
-      if (card.id === Number(like.id)) {
-        if (!likedArray)
-          localStorage.setItem("liked", JSON.stringify([{ ...card, author }]));
-        else
-          localStorage.setItem(
-            "liked",
-            JSON.stringify([...likedArray, { ...card, author }])
-          );
-        // localStorage.removeItem("liked", JSON.stringify([card]));
-      }
-    });
-  } else {
-    like.classList.remove("wishlist__pull");
-    like.classList.add("wishlist__empty");
+      objects.forEach((card) => {
+        // console.log(card.id, like.id);
+        if (card.id === Number(like.id)) {
+          if (!likedArray)
+            localStorage.setItem(
+              "liked",
+              JSON.stringify([{ ...card, author }])
+            );
+          else
+            localStorage.setItem(
+              "liked",
+              JSON.stringify([...likedArray, { ...card, author }])
+            );
+          // localStorage.removeItem("liked", JSON.stringify([card]));
+        }
+      });
+    } else {
+      like.classList.remove("wishlist__pull");
+      like.classList.add("wishlist__empty");
 
-    resArray = [...likedArray].filter((likedItem) => {
-      // console.log(card.id, like.id);
-      console.log(likedItem.id, like.id);
-      if (likedItem.id === Number(like.id)) return false;
-      else return true;
-    });
+      resArray = [...likedArray].filter((likedItem) => {
+        // console.log(card.id, like.id);
+        console.log(likedItem.id, like.id);
+        if (likedItem.id === Number(like.id)) return false;
+        else return true;
+      });
 
-    localStorage.setItem("liked", JSON.stringify(resArray));
+      localStorage.setItem("liked", JSON.stringify(resArray));
+    }
   }
 };
 
