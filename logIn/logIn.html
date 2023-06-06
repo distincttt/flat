@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Log In</title>
-		<link rel="stylesheet" href="logIn.css" />
-	</head>
-	<body>
-		<header class="header">
-			<h1 class="header__title"><a href="index.html" class="header__link">Выше</a></h1>
-			<div class="header__buttons">
-				<a class="header__button" href="logIn.html">Log In</a>
-				<a class="header__button" href="logIn.html">Sign Up</a>
-			</div>
-		</header>
-		<form class="login-form">
-			<input type="text" class="login-input" placeholder="Имя пользователя" />
-			<input type="password" class="login-input" placeholder="Пароль" />
-			<button class="login-button">Войти</button>
-		</form>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="logIn.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">
+        <a href="../index.html" class="header__link">Выше</a>
+      </h1>
+      <div class="header__buttons">
+        <a class="header__button">Log In</a>
+        <a class="header__button" href="../signup/signup.html">Sign Up</a>
+      </div>
+    </header>
+    <form class="login-form">
+      <div class="logH">Log In</div>
+      <input type="text" class="login-input" placeholder="Имя пользователя" />
+      <input type="password" class="login-input" placeholder="Пароль" />
+      <button class="login-button">Войти</button>
+      <div class="error hidden"></div>
+    </form>
+  </body>
+  <script src="logInScript.js"></script>
 </html>

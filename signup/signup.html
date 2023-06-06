@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">
+        <a href="../index.html" class="header__link">Выше</a>
+      </h1>
+      <div class="header__buttons">
+        <a class="header__button" href="../logIn/logIn.html">Log In</a>
+        <a class="header__button">Sign Up</a>
+      </div>
+    </header>
+    <form class="signup-form">
+      <div class="signH">Sign Up</div>
+      <input type="text" class="signup-input" placeholder="Имя" />
+      <input type="text" class="signup-input" placeholder="Имя пользователя" />
+      <!-- <input
+        type="number"
+        class="signup-input"
+        placeholder="+7-(999)-999-99-99"
+      /> -->
+      <input type="password" class="signup-input" placeholder="Пароль" />
+      <button class="signup-button">Зарегистрироваться</button>
+      <div class="error hidden"></div>
+    </form>
+  </body>
+  <script src="signUpScript.js"></script>
+</html>

@@ -6,7 +6,7 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 
-.login-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -14,7 +14,7 @@ html {
   margin-top: 100px;
 }
 
-.login-input {
+.signup-input {
   padding: 20px;
   font-size: 25px;
   border: 1px solid #e4e4e4;
@@ -26,7 +26,7 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 
-.login-button {
+.signup-button {
   width: 100%;
   padding: 20px;
   font-size: 25px;
@@ -38,10 +38,10 @@ html {
   box-shadow: 0 0 7px 1px rgb(139, 139, 139);
   font-family: "Roboto Mono", monospace;
 }
-.login-button:hover {
+.signup-button:hover {
   background-color: rgb(146, 0, 0);
 }
-.login-input:focus {
+.signup-input:focus {
   outline: none;
   border-color: rgb(75, 151, 75);
 }
@@ -64,7 +64,7 @@ html {
 }
 .header__button {
   background-color: white;
-  border: 3px solid rgb(66, 131, 66);
+  border: 3px solid rgb(75, 151, 75);
   border-radius: 5px;
   height: 50px;
   padding: 0 30px;
@@ -87,11 +87,25 @@ html {
   color: #313131;
 }
 
-.hidden {
-  display: none;
+.error {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  /* position: absolute; */
+  padding: 10px;
+
+  background-color: white;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0 0 7px 1px rgb(139, 139, 139);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  /* margin-left: -3px; */
 }
 
-.logH {
+.signH {
   font-size: 40px;
   display: flex;
   flex-direction: column;
@@ -99,7 +113,13 @@ html {
   margin-bottom: 50px;
 }
 
-.error {
-  text-align: center;
-  font-size: 20px;
+.hidden {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
