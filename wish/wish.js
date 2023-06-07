@@ -1,14 +1,23 @@
 const list = document.querySelector(".list");
 const allLink = document.querySelectorAll(".header__button");
-let id = 0;
+
 const likedArray = JSON.parse(localStorage.getItem("liked"));
 const author = localStorage.getItem("currentName");
 const mainPage = document.querySelector(".header__link");
-
+const oops = document.querySelector(".oops");
 // localStorage.removeItem("liked");
 
 const onClick = (e) => {
   const like = e.target;
+  const price = like.parentElement.firstChild.innerHTML;
+  let cardPriceArray = price.slice(0, price.length - 3).split("");
+
+  cardPriceArray = cardPriceArray.filter((number) => {
+    if (number === " ") return false;
+    else return true;
+  });
+  const resPrice = Number(cardPriceArray.join(""));
+
   if (like.classList.contains("wishlist__empty")) {
     like.classList.add("wishlist__pull");
     like.classList.remove("wishlist__empty");
@@ -19,8 +28,13 @@ const onClick = (e) => {
     const likedArray = JSON.parse(localStorage.getItem("liked"));
 
     const resArray = [...likedArray].filter((likedItem) => {
-      console.log(likedItem);
-      if (likedItem.id === Number(like.id)) return false;
+      console.log(likedItem.id, Number(like.id));
+      console.log(resPrice, Number(likedItem.price));
+      if (
+        likedItem.id === Number(like.id) &&
+        resPrice === Number(likedItem.price)
+      )
+        return false;
       else return true;
     });
 
@@ -28,14 +42,14 @@ const onClick = (e) => {
 
     const list = document.querySelector(".list");
 
-    // console.log(like.parentElement.parentElement.parentElement);
     list.removeChild(like.parentElement.parentElement.parentElement);
+  }
 
-    // if (!list.children.length) {
-    //   oops.classList.remove("hidden");
-    //   showMoreButton.classList.add("hidden");
-    // }
-    // else if(list.children.length <=5) printOneItem()
+  const resArray = JSON.parse(localStorage.getItem("liked"));
+
+  if (!resArray.length) {
+    const oops = document.querySelector(".oops");
+    oops.classList.remove("hidden");
   }
 };
 
@@ -59,8 +73,7 @@ const printOneItem = (object) => {
   const button = document.createElement("button");
   button.classList.add("wishlist__pull");
   button.classList.add("wishlist");
-  button.setAttribute("id", id);
-  id++;
+  button.setAttribute("id", object.id);
 
   button.addEventListener("click", onClick);
 
@@ -116,7 +129,6 @@ const printItems = (objects) => {
   });
 };
 
-const oops = document.querySelector(".oops");
 const resArray = likedArray.filter((card) => {
   if (card.author === author) return true;
   else return false;
