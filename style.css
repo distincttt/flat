@@ -20,7 +20,7 @@ html {
   width: 62px;
   height: 62px;
   /* background-image: url('search.png'); */
-  border: 2px solid rgb(75, 151, 75);
+  border: 2px solid #2e8b57;
   box-sizing: border-box;
   border-radius: 0 5px 5px 0;
   border-left: none;
@@ -47,7 +47,7 @@ html {
 }
 .header__button {
   background-color: white;
-  border: 3px solid rgb(75, 151, 75);
+  border: 3px solid #2e8b57;
   border-radius: 5px;
   height: 50px;
   padding: 0 30px;
@@ -158,7 +158,7 @@ html {
 }
 .show-more {
   background-color: white;
-  border: 3px solid rgb(75, 151, 75);
+  border: 3px solid #2e8b57;
   width: 300px;
   height: 70px;
   font-size: 20px;
@@ -184,9 +184,9 @@ html {
   width: 100%;
 }
 
-.item {
+/* .item {
   color: grey;
-}
+} */
 .gap {
   gap: 30px;
   align-items: center;
@@ -233,7 +233,7 @@ html {
 
 .close-button {
   background-color: white;
-  border: 3px solid rgb(75, 151, 75);
+  border: 3px solid #2e8b57;
   border-radius: 5px;
   height: 50px;
   display: flex;
@@ -291,7 +291,7 @@ html {
 
 .search-input:focus {
   outline: none;
-  border-color: rgb(75, 151, 75);
+  border-color: #2e8b57;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -319,7 +319,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: center;
   font-size: 25px;
-  background-color: rgb(75, 151, 75);
+  background-color: #2e8b57;
   color: white;
   border: none;
   border-radius: 5px;
@@ -348,7 +348,7 @@ input::-webkit-inner-spin-button {
   background-image: url("../img/heartempty25.svg");
   background-repeat: space;
   background-size: 25px;
-  border: 3px solid rgb(75, 151, 75);
+  border: 3px solid #2e8b57;
   border-radius: 5px;
   height: 55px;
   padding: 0 30px;

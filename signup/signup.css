@@ -30,7 +30,7 @@ html {
   width: 100%;
   padding: 20px;
   font-size: 25px;
-  background-color: rgb(75, 151, 75);
+  background-color: #2e8b57;
   color: white;
   border: none;
   border-radius: 5px;
@@ -39,11 +39,11 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 .signup-button:hover {
-  background-color: rgb(146, 0, 0);
+  background-color: #b22222;
 }
 .signup-input:focus {
   outline: none;
-  border-color: rgb(75, 151, 75);
+  border-color: #2e8b57;
 }
 
 .header__title {
@@ -64,7 +64,7 @@ html {
 }
 .header__button {
   background-color: white;
-  border: 3px solid rgb(75, 151, 75);
+  border: 3px solid #2e8b57;
   border-radius: 5px;
   height: 50px;
   padding: 0 30px;
@@ -80,8 +80,8 @@ html {
   gap: 25px;
 }
 .header__button:hover {
-  border: 3px solid rgb(146, 0, 0);
-  color: rgb(146, 0, 0);
+  border: 3px solid #b22222;
+  color: #b22222;
 }
 .header__button:active {
   color: #313131;
